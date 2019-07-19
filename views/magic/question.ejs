@@ -7,7 +7,11 @@
 <h1>Ask me a yes/no question!</h1>
 
 <form class="question" action="/magic/question" method="post">
-	<input type="text" name="username" placeholder="Enter your name here"><br>
+	<% if(name) { %>
+	<input type="text" name="username" value="<%= name %>" placeholder="Enter your name here"><br>
+	<% } else { %>
+		<input type="text" name="username"  placeholder="What is your name?">
+		<br> <% } %>
 	<input type="text" name="question" placeholder="Type your question here"><br>
 	<button type="submit">Ask me a question</button>
 </form>

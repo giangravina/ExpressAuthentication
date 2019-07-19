@@ -1,13 +1,13 @@
 <% layout('/layout') %>
 <% block('title', 'Magic 8-Ball') %>
-
-	<h1>Click the button to shake the 8-ball</h1>
-	<div class="<%= tone %>"> <%= message  %> </div>
-	<button id="shake">Shake the Ball</button>
+<h1><%= name %> has shaken the Magic 8-Ball!</h1>
+<p><%= name %> asked the magic 8-ball: <%= question %></p>
+	<div class="<%= message.tone %>"> <%= message.message  %> </div>
+	<button id="shake">Ask Another Question</button>
 
 	<script type="text/javascript">
 		var button = document.getElementById('shake');
 		button.addEventListener('click', function(){
-			window.location.reload();
+			window.location.href = '/magic/question';
 		})
 	</script>
